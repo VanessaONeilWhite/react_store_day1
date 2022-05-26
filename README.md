@@ -1,3 +1,1 @@
-## Button, Card, NavBar, and Rating created ##
-
-### primaryTheme and darkMode colors added ###
+## Login and Profile form (edit and register) created
