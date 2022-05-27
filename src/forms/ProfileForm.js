@@ -10,7 +10,7 @@ const FormSchema=Yup.object(
         lastName:Yup.string().required(),
         email:Yup.string().email("Must be a valid e-mail format").required(),
         password: Yup.string().required(),
-        favoriteBook: Yup.string().reqruired(),
+        favoriteBook: Yup.string().required(),
     }
 )
 
