@@ -8,6 +8,7 @@ import ProfileForm from './forms/ProfileForm'
 import LoginForm from './forms/LoginForm'
 import apiBooks from './api/apiBookAuth'
 import { CancelToken } from 'apisauce'
+import ResponsiveGrid from './components/Books'
 
 
 const handleAPITest= async() =>{
@@ -19,15 +20,7 @@ const handleAPITest= async() =>{
 function App() {
   return (
       <Navbar>
-        <Button color="success" onClick={handleAPITest}>Test API Call</Button>
-        <ProfileForm/>
-        <br></br>
-        <LoginForm/>
-        <br></br>
-        <Card/>
-        <Button color="success" icon={<AddIcon/>}>Add to reading list</Button>
-        <br></br>
-        <Rating/>
+      <ResponsiveGrid/>
       </Navbar>
   );
 }
