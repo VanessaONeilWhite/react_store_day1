@@ -8,7 +8,7 @@ import ProfileForm from './forms/ProfileForm'
 import LoginForm from './forms/LoginForm'
 import apiBooks from './api/apiBookAuth'
 import { CancelToken } from 'apisauce'
-import ResponsiveGrid from './components/Books'
+import ViewBooks from './components/Books'
 
 
 const handleAPITest= async() =>{
@@ -20,7 +20,7 @@ const handleAPITest= async() =>{
 function App() {
   return (
       <Navbar>
-      <ResponsiveGrid/>
+        <ViewBooks/>
       </Navbar>
   );
 }

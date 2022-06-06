@@ -2,6 +2,11 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Card from './Card';
+import getBooks from '../hooks/getBooks'
+import Error from './Error'
+import CircularProgress from '@mui/material/CircularProgress';
+import Box from '@mui/material/Box'
+import Error from './Error'
 
 
 const book1 ={
@@ -73,7 +78,25 @@ const books = [book1, book2, book3, book4, book5, book6]
 
 
 
-export default function ResponsiveGrid() {
+export default function ViewBooks({bookId}) {
+  const {error, books} =getBooks(bookId)
+  
+  if (error){
+    return(
+      <Box sx={{display:'flex'}}>
+        <Error>{error}</Error>
+      </Box>
+    )
+  }
+
+  if (!books){
+    return(
+      <Box sx={{display:"flex"}}>
+      <CircularProgress/>
+      </Box>
+    )
+  }
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
