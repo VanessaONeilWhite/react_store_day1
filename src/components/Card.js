@@ -100,12 +100,17 @@ export default function RecipeReviewCard({book}) {
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
-        <IconButton aria-label="Add to my booklist">
-          <FavoriteIcon />
+      <ButtonGroup sx={{margin:"auto"}}>
+        <IconButton key="delete" onClick={()=>{emptyList(item)}}>
+            <DeleteForeverTwoToneIcon fontSize="small"/>
         </IconButton>
-        <IconButton aria-label="share">
-          <ShareIcon />
+        <IconButton key="rm" onClick={()=>{removeFromList(item)}}>
+            <RemoveCircleTwoToneIcon fontSize="small"/>
         </IconButton>
+        <IconButton key="add" onClick={()=>{addToList(item)}}>
+            <AddCircleTwoToneIcon fontSize="small"/>
+        </IconButton>
+    </ButtonGroup>
         <ExpandMore
           expand={expanded}
           onClick={handleExpandClick}
