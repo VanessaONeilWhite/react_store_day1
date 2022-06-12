@@ -34,7 +34,7 @@ const AppContextProvider = ({children}) => {
 
     useEffect(
         ()=>{
-            if (list.length>0){
+            {
                 localStorage.setItem('bookList', JSON.stringify(bookList))
             }
         }, [bookList]
